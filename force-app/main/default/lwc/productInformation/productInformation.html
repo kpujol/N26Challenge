@@ -1,0 +1,61 @@
+<template>
+    <lightning-card title="Customer's Product Information" icon-name="standard:price_book_entries">
+        <div class="slds-m-around_large">
+            <template if:true={hasProductInfo}>
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-size_1-of-2">
+                        <div class="slds-form-element slds-form-element_readonly">
+                            <span class="slds-form-element__label">Product</span>
+                            <div class="slds-form-element__control">
+                                <div class="slds-form-element__static">{productInfo.productName}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">
+                        <div class="slds-form-element slds-form-element_readonly">
+                            <span class="slds-form-element__label">Country</span>
+                            <div class="slds-form-element__control">
+                                <div class="slds-form-element__static">{productInfo.countryName}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>           
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-size_1-of-2">
+                        <div class="slds-form-element slds-form-element_readonly">
+                            <span class="slds-form-element__label">Cost per Calendar Month</span>
+                            <div class="slds-form-element__control">
+                                <div class="slds-form-element__static">{productInfo.monthlyCost}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">
+                        <div class="slds-form-element slds-form-element_readonly">
+                            <span class="slds-form-element__label">ATM Fee in other currencies</span>
+                            <div class="slds-form-element__control">
+                                <div class="slds-form-element__static">{productInfo.atmFee}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>  
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-size_1-of-2">
+                        <div class="slds-form-element slds-form-element_readonly">
+                            <span class="slds-form-element__label">Card Replacement Cost</span>
+                            <div class="slds-form-element__control">
+                                <div class="slds-form-element__static">{productInfo.replacementCost}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">
+                    </div>
+                </div>      
+            </template>
+            <template if:true={error}>
+                <div class="slds-text-color_error">
+                <p>{error}</p>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>
