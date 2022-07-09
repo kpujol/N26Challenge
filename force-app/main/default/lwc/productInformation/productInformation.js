@@ -24,13 +24,8 @@ export default class ProductInformation extends LightningElement {
     @wire(getProductInformation, {contactId: '$contactId'})
     getProductInfo({ error, data }) {
         if (data) {
-            if(data == undefined || this.contactId == undefined){
-                this.hasProductInfo = false;
-                this.productInfo = undefined;
-            } else{
-                this.hasProductInfo = true;
-                this.productInfo = data;
-            }
+            this.hasProductInfo = true;
+            this.productInfo = data;
             this.error = undefined;
         } else if (error) {
             let message;
@@ -42,6 +37,10 @@ export default class ProductInformation extends LightningElement {
             this.hasProductInfo = false;
             this.productInfo = undefined;
             this.error = message;
+        } else { //When there's no contact associate nor data or error returned
+            this.hasProductInfo = false;
+            this.productInfo = undefined;
+            this.error = undefined;
         }
     }
 
