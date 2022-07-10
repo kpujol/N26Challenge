@@ -26,7 +26,7 @@ To test the **Product Information LWC** component follow these steps:
 To test the **Product Information Rest Service** follow these steps:
 
   1. Open an API client (like Swagger or Postman) or the Terminal (with curl)
-  2. Get the session token using the credentials, client and secret aforementioned 
-  3. Create or Update a contacte with an External_ID__c
-  4. Send a request to the following endpoind appending your External_ID__c https://customer-app-786-dev-ed.lightning.force.com/services/apexrest/ProductInformation/[ExternalID]
-  5. Check it for different contacts with different product and country information
+  3. Get the session token using the credentials, client and secret aforementioned 
+  4. Create or Update a contact with an External_ID__c
+  5. Send a request to the following endpoind appending your External_ID__c https://customer-app-786-dev-ed.lightning.force.com/services/apexrest/ProductInformation/[ExternalID]
+  6. Check it for different contacts with different product and country information
