@@ -4,9 +4,18 @@
  * @description Data access layer for the Product Information LWC
  */
 public with sharing class ProductInformationRepository {
-    public static Contact getContact (Id contactId){
+    public static Contact getContactById (Id contactId){
         Contact contact = null;
         List<Contact> contacts = [SELECT Id, Product__c, Home_Country__c FROM Contact WHERE Id =: contactId];
+        if(!contacts.isEmpty()){
+            contact = contacts.get(0);
+        }
+        return contact;
+    }
+
+    public static Contact getContactByExternalId (String externalId){
+        Contact contact = null;
+        List<Contact> contacts = [SELECT Id, Product__c, Home_Country__c FROM Contact WHERE External_ID__c =: externalId];
         if(!contacts.isEmpty()){
             contact = contacts.get(0);
         }
