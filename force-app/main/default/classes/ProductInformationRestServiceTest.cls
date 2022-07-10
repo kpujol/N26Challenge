@@ -56,4 +56,15 @@ public with sharing class ProductInformationRestServiceTest {
         System.assertEquals('1%',productInfo.atmFee, 'The ATM Fee in other currencies for this contact must be 1%');
         System.assertEquals('£ 1',productInfo.replacementCost, 'The Cost per Card Replacement Cost for this contact must be £ 1');
     }
+
+    @isTest static void retriveNullCustomerProductInformation(){
+        Test.startTest();
+        RestRequest request = new RestRequest();
+        request.requestURI = '/services/apexrest/ProductInformation/'+'1234'; 
+        request.httpMethod = 'GET';
+        RestContext.request = request;
+        ProductInformationHelper.ProductWrapper productInfo = ProductInformationRestService.getProductInformation();
+        Test.stopTest();
+        System.assertEquals(null,productInfo,'The ProductInfo is null for the given External ID');
+    }
 }
