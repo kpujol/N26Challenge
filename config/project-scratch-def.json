@@ -1,7 +1,9 @@
 {
-  "orgName": "Demo company",
+  "orgName": "Scratch Org N26",
   "edition": "Developer",
+  "username": "k.pujol.g@n26.com",
   "features": ["EnableSetPasswordInApi"],
+  "hasSampleData": true,
   "settings": {
     "lightningExperienceSettings": {
       "enableS1DesktopEnabled": true

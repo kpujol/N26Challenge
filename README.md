@@ -30,4 +30,3 @@ To test the **Product Information Rest Service** follow these steps:
   3. Create or Update a contacte with an External_ID__c
   4. Send a request to the following endpoind appending your External_ID__c https://customer-app-786-dev-ed.lightning.force.com/services/apexrest/ProductInformation/[ExternalID]
   5. Check it for different contacts with different product and country information
-
