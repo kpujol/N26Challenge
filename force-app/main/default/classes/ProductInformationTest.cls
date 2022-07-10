@@ -45,7 +45,7 @@ public with sharing class ProductInformationTest {
     @isTest public static void testControllerForContactWithProductData(){
         Contact contact = ProductInformationRepository.getContactsByLastName(CONTACT_LAST_NAME).get(0);
         Test.startTest();
-        ProductInformationController.ProductWrapper productInfo = ProductInformationController.getProductInformation(contact.Id);
+        ProductInformationHelper.ProductWrapper productInfo = ProductInformationController.getProductInformation(contact.Id);
         Test.stopTest();
         System.assertEquals('€ 1',productInfo.monthlyCost, 'The Cost per Calendar Month for this contact must be € 1');
         System.assertEquals('1%',productInfo.atmFee, 'The ATM Fee in other currencies for this contact must be 1%');
